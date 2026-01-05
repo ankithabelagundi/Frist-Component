@@ -1,0 +1,11 @@
+import axios from "axios";
+import { auth } from "../firebase/firebase.config";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+
+export const signupUser = (email, password) =>
+  createUserWithEmailAndPassword(auth, email, password);
+
+export const loginUser = (email, password) =>
+  signInWithEmailAndPassword(auth, email, password);
+
+export const logoutUser = () => signOut(auth);
